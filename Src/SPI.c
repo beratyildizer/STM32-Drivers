@@ -181,7 +181,7 @@ void SPI_TransmitData(SPI_HandleTypeDef_t *SPI_Handle, uint8_t *pData, uint16_t 
 		{
 			if(SPI_GetFlagStatus(SPI_Handle, SPI_TxE_FLAG)) //if((SPI_Handle->Instance->SR >> 1U) & 0x1U)
 			{
-				SPI_Handle->Instance->DR = *((uint16_t*)pData); //dereference nedir? ok anladım
+				SPI_Handle->Instance->DR = *((uint16_t*)pData); 
 				pData += sizeof(uint16_t);
 				sizeOfData -= 2;
 
